@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual de Fotografía de Producto — 1927</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Variables ─────────────────────────────────────────── */
+    :root {
+      --color-primary:    #243545;
+      --color-bg:         #E4E3E1;
+      --color-light:      #F5F7F6;
+      --color-dark:       #101921;
+      --color-accent:     #3a5570;
+      --color-rule:       rgba(36, 53, 69, 0.15);
+      --color-tag-bg:     rgba(36, 53, 69, 0.08);
+
+      --font-serif:       'Cormorant Garamond', Georgia, serif;
+      --font-sans:        'Open Sans', sans-serif;
+
+      --radius:           4px;
+      --max-width:        860px;
+      --section-gap:      5rem;
+    }
+
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Base ──────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-dark);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ────────────────────────────────────────────── */
+    header {
+      background-color: var(--color-primary);
+      color: var(--color-light);
+      padding: 4.5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 247, 246, 0.07);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 247, 246, 0.05);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 246, 0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--color-light);
+      margin-bottom: 1.25rem;
+      max-width: 600px;
+    }
+
+    header h1 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .header-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(245, 247, 246, 0.12);
+    }
+
+    .header-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .header-meta-item .label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 246, 0.4);
+    }
+
+    .header-meta-item .value {
+      font-size: 13px;
+      color: rgba(245, 247, 246, 0.8);
+      font-weight: 400;
+    }
+
+    /* ── Nav ───────────────────────────────────────────────── */
+    nav {
+      background-color: var(--color-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-inner::-webkit-scrollbar { display: none; }
+
+    nav a {
+      color: rgba(245, 247, 246, 0.5);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 1.25rem;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--color-light);
+      border-bottom-color: rgba(245, 247, 246, 0.3);
+    }
+
+    /* ── Main layout ───────────────────────────────────────── */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* ── Section ───────────────────────────────────────────── */
+    section {
+      margin-bottom: var(--section-gap);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-rule);
+    }
+
+    .section-number {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(36, 53, 69, 0.35);
+      min-width: 28px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    /* ── Intro block ───────────────────────────────────────── */
+    .intro-text {
+      font-size: 15px;
+      color: rgba(16, 25, 33, 0.72);
+      max-width: 620px;
+      line-height: 1.85;
+    }
+
+    /* ── Spec grid ─────────────────────────────────────────── */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1px;
+      background-color: var(--color-rule);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-item {
+      background-color: var(--color-bg);
+      padding: 1.4rem 1.6rem;
+      transition: background-color 0.15s;
+    }
+
+    .spec-item:hover {
+      background-color: rgba(36, 53, 69, 0.04);
+    }
+
+    .spec-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(36, 53, 69, 0.45);
+      margin-bottom: 0.4rem;
+    }
+
+    .spec-value {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    .spec-note {
+      font-size: 12px;
+      color: rgba(36, 53, 69, 0.5);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ── Alert / Note ──────────────────────────────────────── */
+    .note {
+      background-color: rgba(36, 53, 69, 0.06);
+      border-left: 3px solid var(--color-primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 13.5px;
+      color: rgba(16, 25, 33, 0.75);
+      line-height: 1.7;
+      margin-top: 1.25rem;
+    }
+
+    .note strong {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    /* ── Shot type cards ───────────────────────────────────── */
+    .shot-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .shot-card {
+      background-color: var(--color-light);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .shot-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 25, 33, 0.08);
+    }
+
+    .shot-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background-color: var(--color-primary);
+    }
+
+    .shot-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .shot-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .shot-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .shot-card li {
+      font-size: 13px;
+      color: rgba(16, 25, 33, 0.68);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .shot-card li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(36, 53, 69, 0.3);
+      font-size: 11px;
+    }
+
+    /* ── Naming example ────────────────────────────────────── */
+    .naming-example {
+      background-color: var(--color-primary);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .naming-formula {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(245, 247, 246, 0.6);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.01em;
+    }
+
+    .naming-files {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .naming-file {
+      font-family: 'Courier New', monospace;
+      font-size: 13.5px;
+      color: var(--color-light);
+      background-color: rgba(245, 247, 246, 0.07);
+      padding: 0.5rem 0.85rem;
+      border-radius: 2px;
+      letter-spacing: 0.02em;
+    }
+
+    .naming-file .dim {
+      color: rgba(245, 247, 246, 0.35);
+    }
+
+    /* ── Table ─────────────────────────────────────────────── */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+
+    thead tr {
+      background-color: var(--color-primary);
+      color: var(--color-light);
+    }
+
+    thead th {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.25rem;
+      text-align: left;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--color-rule);
+      transition: background-color 0.12s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody tr:hover {
+      background-color: rgba(36, 53, 69, 0.04);
+    }
+
+    tbody td {
+      padding: 0.85rem 1.25rem;
+      color: rgba(16, 25, 33, 0.78);
+      vertical-align: top;
+    }
+
+    tbody td:first-child {
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    td.mono {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: rgba(16, 25, 33, 0.6);
+    }
+
+    /* ── Delivery checklist ────────────────────────────────── */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 14px;
+      color: rgba(16, 25, 33, 0.75);
+      line-height: 1.6;
+    }
+
+    .checklist li::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 1.5px solid var(--color-primary);
+      border-radius: 2px;
+      margin-top: 2px;
+      opacity: 0.5;
+    }
+
+    .checklist li strong {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    /* ── Folder structure ──────────────────────────────────── */
+    .folder-tree {
+      background-color: var(--color-primary);
+      color: var(--color-light);
+      padding: 1.75rem 2rem;
+      border-radius: var(--radius);
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .folder-tree .dir {
+      color: rgba(245, 247, 246, 0.55);
+    }
+
+    .folder-tree .file {
+      color: var(--color-light);
+      padding-left: 1.5rem;
+    }
+
+    .folder-tree .file.raw {
+      color: rgba(245, 247, 246, 0.45);
+    }
+
+    /* ── Summary table ─────────────────────────────────────── */
+    .summary-block {
+      background-color: var(--color-primary);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .summary-block table {
+      font-size: 13.5px;
+    }
+
+    .summary-block thead tr {
+      background-color: var(--color-dark);
+    }
+
+    .summary-block tbody tr {
+      border-bottom: 1px solid rgba(245, 247, 246, 0.08);
+    }
+
+    .summary-block tbody tr:hover {
+      background-color: rgba(245, 247, 246, 0.04);
+    }
+
+    .summary-block tbody td {
+      color: rgba(245, 247, 246, 0.7);
+      padding: 0.85rem 1.25rem;
+    }
+
+    .summary-block tbody td:first-child {
+      color: rgba(245, 247, 246, 0.45);
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .summary-block tbody td:last-child {
+      color: var(--color-light);
+      font-family: var(--font-serif);
+      font-size: 1rem;
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    footer {
+      background-color: var(--color-dark);
+      color: rgba(245, 247, 246, 0.35);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    footer strong {
+      color: rgba(245, 247, 246, 0.6);
+    }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      header { padding: 3rem 1.25rem 2.5rem; }
+      main { padding: 2.5rem 1.25rem 4rem; }
+      .spec-grid { grid-template-columns: 1fr 1fr; }
+      .shot-cards { grid-template-columns: 1fr; }
+      .header-meta { gap: 1.25rem; }
+      nav a { padding: 0.85rem 0.9rem; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <p class="brand-label">1927 — Documentación interna</p>
+      <h1>Manual de exportación<br><em>fotografía de producto</em></h1>
+      <div class="header-meta">
+        <div class="header-meta-item">
+          <span class="label">Versión</span>
+          <span class="value">1.0</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Plataforma</span>
+          <span class="value">WordPress + WooCommerce</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Dirigido a</span>
+          <span class="value">Fotógrafo de producto</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Actualizado</span>
+          <span class="value">2026</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav ───────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#intro">Introducción</a>
+      <a href="#specs">Especificaciones</a>
+      <a href="#tomas">Tipos de toma</a>
+      <a href="#nomenclatura">Nomenclatura</a>
+      <a href="#entrega">Entrega</a>
+      <a href="#resumen">Resumen</a>
+      <a href="#catalogo">Catálogo</a>
+    </div>
+  </nav>
+
+  <!-- ── Main ──────────────────────────────────────────────── -->
+  <main>
+
+    <!-- 1. Introducción -->
+    <section id="intro">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Introducción</h2>
+      </div>
+      <p class="intro-text">
+        Este documento define las especificaciones técnicas de exportación para todas las fotografías de producto destinadas al sitio web de 1927. Su propósito es garantizar consistencia visual, rendimiento óptimo de carga y calidad de imagen en todos los dispositivos. No cubre dirección creativa ni estilos visuales — únicamente los parámetros técnicos de entrega.
+      </p>
+      <div class="note">
+        <strong>Importante:</strong> Este manual aplica exclusivamente a las imágenes destinadas al sitio web. Los archivos RAW deben entregarse siempre como respaldo independiente.
+      </div>
+    </section>
+
+    <!-- 2. Especificaciones técnicas -->
+    <section id="specs">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Especificaciones técnicas</h2>
+      </div>
+
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Dimensiones</div>
+          <div class="spec-value">2000 × 2667 px</div>
+          <div class="spec-note">On-model y flat lay</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Relación de aspecto</div>
+          <div class="spec-value">3 : 4</div>
+          <div class="spec-note">Portrait — aplica a todas las tomas</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Formato</div>
+          <div class="spec-value">JPEG</div>
+          <div class="spec-note">Extensión en minúsculas: .jpg</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Calidad JPEG</div>
+          <div class="spec-value">85 %</div>
+          <div class="spec-note">90 % para close-ups de tela</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Resolución</div>
+          <div class="spec-value">72 PPI</div>
+          <div class="spec-note">El navegador ignora el DPI; es solo convención</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Espacio de color</div>
+          <div class="spec-value">sRGB</div>
+          <div class="spec-note">Con perfil ICC embebido — obligatorio</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Espacio de color:</strong> Es crítico exportar en sRGB con el perfil ICC embebido. Si se exporta en Adobe RGB sin perfil, los colores —especialmente los azules índigo del denim— se verán desaturados en pantalla.
+      </div>
+
+      <!-- Export settings table -->
+      <div class="table-wrap" style="margin-top: 2rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>Software</th>
+              <th>Ruta de exportación</th>
+              <th>Configuración clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lightroom Classic</td>
+              <td>File → Export</td>
+              <td>Format: JPEG · Quality: 85 · Color Space: sRGB · Resize: Long Edge 2000px · Resolution: 72</td>
+            </tr>
+            <tr>
+              <td>Photoshop</td>
+              <td>File → Export → Export As</td>
+              <td>Format: JPEG · Quality: 85 · Convert to sRGB ✓ · Embed Color Profile ✓ · Resample: Bicubic Sharper</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. Tipos de toma -->
+    <section id="tomas">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Tipos de toma</h2>
+      </div>
+
+      <div class="shot-cards">
+        <div class="shot-card">
+          <span class="shot-card-icon">👤</span>
+          <h3>On-model</h3>
+          <ul>
+            <li>Relación 3:4 portrait</li>
+            <li>2000 × 2667 px</li>
+            <li>JPEG 85%</li>
+          </ul>
+        </div>
+        <div class="shot-card">
+          <span class="shot-card-icon">👖</span>
+          <h3>Flat lay</h3>
+          <ul>
+            <li>Relación 3:4 portrait</li>
+            <li>2000 × 2667 px</li>
+            <li>JPEG 85%</li>
+          </ul>
+        </div>
+        <div class="shot-card">
+          <span class="shot-card-icon">🔍</span>
+          <h3>Close-up de tela</h3>
+          <ul>
+            <li>Relación 3:4 portrait</li>
+            <li>2000 × 2667 px</li>
+            <li>JPEG <strong>90%</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top: 1.5rem;">
+        <strong>Nota sobre close-ups:</strong> Las texturas de denim — tejido, hilos, lavado — son especialmente sensibles a la compresión. Se usa 90% de calidad en lugar de 85% para preservar el detalle fino que el cliente examina al hacer zoom.
+      </div>
+    </section>
+
+    <!-- 4. Nomenclatura -->
+    <section id="nomenclatura">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Nomenclatura de archivos</h2>
+      </div>
+
+      <p style="font-size: 14px; color: rgba(16,25,33,0.7); margin-bottom: 1.5rem; line-height: 1.8;">
+        Todos los archivos deben nombrarse siguiendo esta convención sin excepción. La nomenclatura correcta es necesaria para el SEO del sitio y para la organización del Media Library de WordPress.
+      </p>
+
+      <div class="naming-example">
+        <div class="naming-formula">[SKU Padre] — [# posición en galería].jpg</div>
+        <div class="naming-files">
+          <div class="naming-file">M1055-H-GREY-1.jpg <span class="dim">← posición 1</span></div>
+          <div class="naming-file">M1055-H-GREY-2.jpg <span class="dim">← posición 2</span></div>
+          <div class="naming-file">M1055-H-GREY-3.jpg <span class="dim">← posición 3</span></div>
+          <div class="naming-file">M1055-H-GREY-4.jpg <span class="dim">← posición 4</span></div>
+          <div class="naming-file">M1055-H-GREY-5.jpg <span class="dim">← posición 5</span></div>
+          <div class="naming-file">M1055-H-GREY-6.jpg <span class="dim">← posición 6</span></div>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top: 1.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>Regla</th>
+              <th>Correcto</th>
+              <th>Incorrecto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Separadores</td>
+              <td>Guiones: M1055-H-GREY-1</td>
+              <td>Espacios, guiones bajos, puntos</td>
+            </tr>
+            <tr>
+              <td>Extensión</td>
+              <td>.jpg (minúsculas)</td>
+              <td>.JPEG .JPG .Jpg</td>
+            </tr>
+            <tr>
+              <td>SKU</td>
+              <td>Exactamente como en el sistema</td>
+              <td>Abreviaciones o variantes libres</td>
+            </tr>
+            <tr>
+              <td>Posición</td>
+              <td>Número consecutivo desde 1</td>
+              <td>Letras, palabras descriptivas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. Entrega -->
+    <section id="entrega">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>Entrega de archivos</h2>
+      </div>
+
+      <p style="font-size: 14px; color: rgba(16,25,33,0.7); margin-bottom: 1.5rem; line-height: 1.8;">
+        Cada sesión debe entregarse en dos carpetas separadas: archivos RAW para respaldo y archivos JPEG listos para producción web.
+      </p>
+
+      <div class="folder-tree">
+        <div class="dir">📁 M1055-H-GREY/</div>
+        <div class="dir" style="padding-left:1.5rem">📁 RAW/</div>
+        <div class="file raw">M1055-H-GREY-1.CR3</div>
+        <div class="file raw">M1055-H-GREY-2.CR3</div>
+        <div class="file raw">M1055-H-GREY-n.CR3</div>
+        <div class="dir" style="padding-left:1.5rem">📁 JPEG/</div>
+        <div class="file">M1055-H-GREY-1.jpg</div>
+        <div class="file">M1055-H-GREY-2.jpg</div>
+        <div class="file">M1055-H-GREY-n.jpg</div>
+      </div>
+
+      <ul class="checklist" style="margin-top: 2rem;">
+        <li><span><strong>Una carpeta por SKU/variante.</strong> No mezclar productos o colorways en la misma carpeta.</span></li>
+        <li><span><strong>RAW siempre incluido.</strong> Los archivos RAW son el respaldo maestro para posibles re-ediciones.</span></li>
+        <li><span><strong>JPEG ya renombrado.</strong> Los archivos JPEG deben llegar con la nomenclatura final correcta, no con el nombre de la cámara.</span></li>
+        <li><span><strong>Sin ediciones destructivas en RAW.</strong> Los RAW no deben tener ajustes horneados irreversibles.</span></li>
+        <li><span><strong>Verificar perfil de color antes de exportar.</strong> Confirmar que el espacio de color sea sRGB en la configuración de exportación de Lightroom o Photoshop.</span></li>
+      </ul>
+    </section>
+
+    <!-- 7. Resumen -->
+    <section id="resumen">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2>Resumen de especificaciones</h2>
+      </div>
+
+      <div class="summary-block">
+        <table>
+          <thead>
+            <tr>
+              <th>Parámetro</th>
+              <th>Especificación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Formato de entrega</td>
+              <td>JPEG (.jpg en minúsculas)</td>
+            </tr>
+            <tr>
+              <td>Dimensiones</td>
+              <td>2000 × 2667 px</td>
+            </tr>
+            <tr>
+              <td>Relación de aspecto</td>
+              <td>3:4 portrait — todas las tomas</td>
+            </tr>
+            <tr>
+              <td>Calidad JPEG</td>
+              <td>85% general · 90% close-ups de tela</td>
+            </tr>
+            <tr>
+              <td>Resolución</td>
+              <td>72 PPI</td>
+            </tr>
+            <tr>
+              <td>Espacio de color</td>
+              <td>sRGB con perfil ICC embebido</td>
+            </tr>
+            <tr>
+              <td>Nomenclatura</td>
+              <td>[SKU]-[posición].jpg · ej: M1055-H-GREY-1.jpg</td>
+            </tr>
+            <tr>
+              <td>Archivos a entregar</td>
+              <td>RAW (respaldo) + JPEG (producción web)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Catálogo de productos -->
+    <section id="catalogo">
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <h2>Catálogo de productos</h2>
+      </div>
+      <p style="font-size: 14px; color: rgba(16,25,33,0.7); margin-bottom: 1.75rem; line-height: 1.8;">
+        Referencia completa de SKUs y nombres comerciales. Usar el SKU Padre exactamente como aparece en esta tabla para nombrar los archivos, reemplazando los guiones bajos por guiones: <code style="background:rgba(36,53,69,0.08);padding:2px 6px;border-radius:2px;font-size:12px;">M1055_H_GREY → M1055-H-GREY-1.jpg</code>
+      </p>
+
+      <!-- Filter input -->
+      <div style="margin-bottom: 1rem;">
+        <input
+          type="text"
+          id="catalogFilter"
+          placeholder="Filtrar por SKU o nombre…"
+          oninput="filterCatalog()"
+          style="
+            width: 100%;
+            max-width: 360px;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--color-rule);
+            border-radius: var(--radius);
+            background: var(--color-light);
+            color: var(--color-dark);
+            font-family: var(--font-sans);
+            font-size: 13px;
+            outline: none;
+          "
+        />
+      </div>
+
+      <div class="table-wrap">
+        <table id="catalogTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>SKU Padre</th>
+              <th>Nombre comercial</th>
+              <th>Ejemplo de archivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>M1055-H-GREY</td><td>Tenis Momentum Grey Hombre - Confort Absoluto</td><td class="mono">M1055-H-GREY-1.jpg</td></tr>
+            <tr><td>2</td><td>M1055-H-BEIGE</td><td>Tenis Momentum Beige Hombre - Suela Elevada</td><td class="mono">M1055-H-BEIGE-1.jpg</td></tr>
+            <tr><td>3</td><td>M1055-M-BLUE</td><td>Tenis Momentum Blue Mujer - Estilo Urbano Vanguardista</td><td class="mono">M1055-M-BLUE-1.jpg</td></tr>
+            <tr><td>4</td><td>M1053-H-SHOES</td><td>Tenis Heritage Hombre - Legado de Estilo</td><td class="mono">M1053-H-SHOES-1.jpg</td></tr>
+            <tr><td>5</td><td>M1053-M-SHOES</td><td>Tenis Heritage Mujer - Diseño Exclusivo</td><td class="mono">M1053-M-SHOES-1.jpg</td></tr>
+            <tr><td>6</td><td>M1056-M-WHITE</td><td>Tenis Timeless White Mujer - Diseño Exclusivo</td><td class="mono">M1056-M-WHITE-1.jpg</td></tr>
+            <tr><td>7</td><td>M1055-M-BROWN</td><td>Tenis Momentum Brown Mujer - Plataforma Elevada</td><td class="mono">M1055-M-BROWN-1.jpg</td></tr>
+            <tr><td>8</td><td>M1058-M</td><td>Tenis Iconic Star Mujer - Diseño Exclusivo</td><td class="mono">M1058-M-1.jpg</td></tr>
+            <tr><td>9</td><td>CM1</td><td>Chamarra Baggy Negro Mujer - Elegancia Duradera</td><td class="mono">CM1-1.jpg</td></tr>
+            <tr><td>10</td><td>CM2</td><td>Chamarra Baggy Stone Medio Oscuro Mujer - Durabilidad Eterna</td><td class="mono">CM2-1.jpg</td></tr>
+            <tr><td>11</td><td>CH1</td><td>Chamarra Beige Corte Slim Hombre - Forma Impecable</td><td class="mono">CH1-1.jpg</td></tr>
+            <tr><td>12</td><td>CH2</td><td>Chamarra Acid Wash Slim Hombre - Estilo Atrevido</td><td class="mono">CH2-1.jpg</td></tr>
+            <tr><td>13</td><td>CH3</td><td>Chamarra Negro Corte Slim Hombre - Forma Inalterable</td><td class="mono">CH3-1.jpg</td></tr>
+            <tr><td>14</td><td>M1055-M-BEIGE</td><td>Tenis Momentum Beige Mujer - Suela Elevada</td><td class="mono">M1055-M-BEIGE-1.jpg</td></tr>
+            <tr><td>15</td><td>M1056-H-WHITE</td><td>Tenis Timeless White Hombre - Diseño Clásico</td><td class="mono">M1056-H-WHITE-1.jpg</td></tr>
+            <tr><td>16</td><td>M1055-H-BROWN</td><td>Tenis Momentum Brown Hombre - Estilo Sofisticado</td><td class="mono">M1055-H-BROWN-1.jpg</td></tr>
+            <tr><td>17</td><td>M1058-H</td><td>Tenis Iconic Star Hombre - Diseño Exclusivo</td><td class="mono">M1058-H-1.jpg</td></tr>
+            <tr><td>18</td><td>JM1</td><td>Jeans Cargo Negro Mujer - Cintura Baja y Forma Inalterable</td><td class="mono">JM1-1.jpg</td></tr>
+            <tr><td>19</td><td>JM2</td><td>Jeans Cargo Baggy Stone Medio Low Mujer - Presencia Masiva</td><td class="mono">JM2-1.jpg</td></tr>
+            <tr><td>20</td><td>JM3</td><td>Jeans Cargo Baggy Light Wash Low Mujer - Forma Inalterable</td><td class="mono">JM3-1.jpg</td></tr>
+            <tr><td>21</td><td>BM1</td><td>Jeans Baggy Negro Cintura Baja Mujer - Memoria Permanente</td><td class="mono">BM1-1.jpg</td></tr>
+            <tr><td>22</td><td>BM2</td><td>Jeans Baggy Stone Medio Oscuro Low Mujer - Cintura Dinámica</td><td class="mono">BM2-1.jpg</td></tr>
+            <tr><td>23</td><td>BM3</td><td>Jeans Baggy Stone Medio Cintura Baja Mujer - Memoria Permanente</td><td class="mono">BM3-1.jpg</td></tr>
+            <tr><td>24</td><td>BM4</td><td>Jeans Baggy Bleach Mujer - Cintura Baja Dinámica</td><td class="mono">BM4-1.jpg</td></tr>
+            <tr><td>25</td><td>JH1101</td><td>Jeans Slim Negro Deslavado Hombre - Memoria Permanente</td><td class="mono">JH1101-1.jpg</td></tr>
+            <tr><td>26</td><td>JH1</td><td>Jeans Slim Stone Oscuro Hombre - Forma Inalterable</td><td class="mono">JH1-1.jpg</td></tr>
+            <tr><td>27</td><td>JH2</td><td>Jeans Slim Stone Medio Claro Hombre - Forma Inalterable</td><td class="mono">JH2-1.jpg</td></tr>
+            <tr><td>28</td><td>JH3</td><td>Jeans Slim Bleach Hombre - Memoria Permanente</td><td class="mono">JH3-1.jpg</td></tr>
+            <tr><td>29</td><td>DH1</td><td>Jeans Straight Negro Hombre - Inalterable</td><td class="mono">DH1-1.jpg</td></tr>
+            <tr><td>30</td><td>DH2</td><td>Jeans Straight Stone Medio Hombre - Forma Inalterable</td><td class="mono">DH2-1.jpg</td></tr>
+            <tr><td>31</td><td>DH3</td><td>Jeans Straight Stone Claro Hombre - Memoria Permanente</td><td class="mono">DH3-1.jpg</td></tr>
+            <tr><td>32</td><td>DH4</td><td>Jeans Straight Bleach Hombre - Memoria Permanente</td><td class="mono">DH4-1.jpg</td></tr>
+            <tr><td>33</td><td>DM1</td><td>Jeans Straight Negro Mujer - Cintura Alta</td><td class="mono">DM1-1.jpg</td></tr>
+            <tr><td>34</td><td>DM2</td><td>Jeans Straight Stone Oscuro Mujer - Cintura Alta</td><td class="mono">DM2-1.jpg</td></tr>
+            <tr><td>35</td><td>DM3</td><td>Jeans Straight Stone Medio Mujer - Cintura Alta</td><td class="mono">DM3-1.jpg</td></tr>
+            <tr><td>36</td><td>DM4</td><td>Jeans Straight Bleach con Destrucción Mujer - Cintura Alta</td><td class="mono">DM4-1.jpg</td></tr>
+            <tr><td>37</td><td>SM1</td><td>Short Largo Negro Deslavado Mujer - Cintura Alta</td><td class="mono">SM1-1.jpg</td></tr>
+            <tr><td>38</td><td>SM2</td><td>Short Largo Stone Oscuro Mujer - Cintura Alta</td><td class="mono">SM2-1.jpg</td></tr>
+            <tr><td>39</td><td>FM1</td><td>Falda Mini Negro Cintura Alta Mujer - Memoria Permanente</td><td class="mono">FM1-1.jpg</td></tr>
+            <tr><td>40</td><td>FM2</td><td>Falda Negro Mujer - Cintura Alta</td><td class="mono">FM2-1.jpg</td></tr>
+            <tr><td>41</td><td>G11</td><td>Gorra Vino Defy Everything Hombre - Actitud Audaz</td><td class="mono">G11-1.jpg</td></tr>
+            <tr><td>42</td><td>G11M</td><td>Gorra Vino Defy Everything Mujer - Actitud Audaz</td><td class="mono">G11M-1.jpg</td></tr>
+            <tr><td>43</td><td>G12</td><td>Gorra Vino 1927 Creative Studio Hombre - Esencia Original</td><td class="mono">G12-1.jpg</td></tr>
+            <tr><td>44</td><td>G12M</td><td>Gorra Vino 1927 Creative Studio Mujer - Diseño Creativo</td><td class="mono">G12M-1.jpg</td></tr>
+            <tr><td>45</td><td>G13</td><td>Gorra Vino Not Famous Yet Hombre - Actitud Auténtica</td><td class="mono">G13-1.jpg</td></tr>
+            <tr><td>46</td><td>G13M</td><td>Gorra Vino Not Famous Yet Mujer - Potencial Ilimitado</td><td class="mono">G13M-1.jpg</td></tr>
+            <tr><td>47</td><td>G21</td><td>Gorra Negra Defy Everything Hombre - Actitud Audaz</td><td class="mono">G21-1.jpg</td></tr>
+            <tr><td>48</td><td>G21M</td><td>Gorra Negra Defy Everything Mujer - Actitud Audaz</td><td class="mono">G21M-1.jpg</td></tr>
+            <tr><td>49</td><td>G22M</td><td>Gorra Negra Mujer - 1927 Creative Studio</td><td class="mono">G22M-1.jpg</td></tr>
+            <tr><td>50</td><td>G22</td><td>Gorra Negra 1927 Creative Studio Hombre - Diseño Exclusivo</td><td class="mono">G22-1.jpg</td></tr>
+            <tr><td>51</td><td>G23</td><td>Gorra Negra Not Famous Yet Hombre - Actitud Audaz</td><td class="mono">G23-1.jpg</td></tr>
+            <tr><td>52</td><td>G23M</td><td>Gorra Negra Mujer - Not Famous Yet</td><td class="mono">G23M-1.jpg</td></tr>
+            <tr><td>53</td><td>G31</td><td>Gorra Azul Defy Everything Hombre - Actitud Audaz</td><td class="mono">G31-1.jpg</td></tr>
+            <tr><td>54</td><td>G31M</td><td>Gorra Defy Everything Mujer - Actitud Audaz</td><td class="mono">G31M-1.jpg</td></tr>
+            <tr><td>55</td><td>G32M</td><td>Gorra Azul 1927 Creative Studio Mujer - Diseño Exclusivo</td><td class="mono">G32M-1.jpg</td></tr>
+            <tr><td>56</td><td>G32</td><td>Gorra Azul 1927 Creative Studio Hombre - Diseño Exclusivo</td><td class="mono">G32-1.jpg</td></tr>
+            <tr><td>57</td><td>G33</td><td>Gorra Azul Not Famous Yet Hombre - Estilo Emergente</td><td class="mono">G33-1.jpg</td></tr>
+            <tr><td>58</td><td>G33M</td><td>Gorra Azul Not Famous Yet Mujer - Actitud Original</td><td class="mono">G33M-1.jpg</td></tr>
+            <tr><td>59</td><td>G41</td><td>Gorra Café Defy Everything Hombre - Actitud Audaz</td><td class="mono">G41-1.jpg</td></tr>
+            <tr><td>60</td><td>G41M</td><td>Gorra Café Defy Everything Mujer - Actitud Audaz</td><td class="mono">G41M-1.jpg</td></tr>
+            <tr><td>61</td><td>G42</td><td>Gorra Café Hombre - 1927 Creative Studio</td><td class="mono">G42-1.jpg</td></tr>
+            <tr><td>62</td><td>G42M</td><td>Gorra Café 1927 Creative Studio Mujer - Diseño Exclusivo</td><td class="mono">G42M-1.jpg</td></tr>
+            <tr><td>63</td><td>G43</td><td>Gorra Café Hombre - Próximo Icono</td><td class="mono">G43-1.jpg</td></tr>
+            <tr><td>64</td><td>G43M</td><td>Gorra Café Not Famous Yet Mujer - Icono Naciente</td><td class="mono">G43M-1.jpg</td></tr>
+            <tr><td>65</td><td>G51</td><td>Gorra Verde Defy Everything Hombre - Actitud Audaz</td><td class="mono">G51-1.jpg</td></tr>
+            <tr><td>66</td><td>G51M</td><td>Gorra Verde Defy Everything Mujer - Actitud Audaz</td><td class="mono">G51M-1.jpg</td></tr>
+            <tr><td>67</td><td>G52</td><td>Gorra Verde 1927 Creative Studio Hombre - Diseño Exclusivo</td><td class="mono">G52-1.jpg</td></tr>
+            <tr><td>68</td><td>G52M</td><td>Gorra Verde 1927 Creative Studio Mujer - Diseño Exclusivo</td><td class="mono">G52M-1.jpg</td></tr>
+            <tr><td>69</td><td>G53</td><td>Gorra Verde Hombre - Not Famous Yet</td><td class="mono">G53-1.jpg</td></tr>
+            <tr><td>70</td><td>G53M</td><td>Gorra Verde Not Famous Yet Mujer - Estilo Único</td><td class="mono">G53M-1.jpg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer>
+    <strong>1927</strong> — Manual de fotografía de producto · v1.0 · Uso interno
+  </footer>
+
+  <script>
+    function filterCatalog() {
+      const query = document.getElementById('catalogFilter').value.toLowerCase();
+      const rows  = document.querySelectorAll('#catalogTable tbody tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
