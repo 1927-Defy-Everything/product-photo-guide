@@ -352,6 +352,53 @@
       font-size: 11px;
     }
 
+    /* ── HEX color cards ───────────────────────────────────── */
+    .hex-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .hex-card {
+      background-color: var(--color-light);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hex-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 25, 33, 0.08);
+    }
+
+    .hex-swatch {
+      width: 100%;
+      height: 80px;
+    }
+
+    .hex-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .hex-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hex-value {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      letter-spacing: 0.05em;
+    }
+
     /* ── Naming example ────────────────────────────────────── */
     .naming-example {
       background-color: var(--color-primary);
@@ -564,6 +611,7 @@
       main { padding: 2.5rem 1.25rem 4rem; }
       .spec-grid { grid-template-columns: 1fr 1fr; }
       .shot-cards { grid-template-columns: 1fr; }
+      .hex-cards { grid-template-columns: 1fr; }
       .header-meta { gap: 1.25rem; }
       nav a { padding: 0.85rem 0.9rem; font-size: 10px; }
     }
@@ -602,7 +650,7 @@
     <div class="nav-inner">
       <a href="#intro">Introducción</a>
       <a href="#specs">Especificaciones</a>
-      <a href="#tomas">Tipos de toma</a>
+      <a href="#tomas">HEX por tipo de shoot</a>
       <a href="#nomenclatura">Nomenclatura</a>
       <a href="#entrega">Entrega</a>
       <a href="#resumen">Resumen</a>
@@ -697,45 +745,32 @@
       </div>
     </section>
 
-    <!-- 3. Tipos de toma -->
+    <!-- 3. HEX por tipo de shoot -->
     <section id="tomas">
       <div class="section-header">
         <span class="section-number">03</span>
-        <h2>Tipos de toma</h2>
+        <h2>HEX por tipo de shoot</h2>
       </div>
 
-      <div class="shot-cards">
-        <div class="shot-card">
-          <span class="shot-card-icon">👤</span>
-          <h3>On-model</h3>
-          <ul>
-            <li>Relación 3:4 portrait</li>
-            <li>2000 × 2667 px</li>
-            <li>JPEG 85%</li>
-          </ul>
+      <div class="hex-cards">
+        <div class="hex-card">
+          <div class="hex-swatch" style="background-color: #c1bdb9;"></div>
+          <div class="hex-card-body">
+            <h3>Modelo con producto</h3>
+            <div class="hex-value">#c1bdb9</div>
+          </div>
         </div>
-        <div class="shot-card">
-          <span class="shot-card-icon">👖</span>
-          <h3>Flat lay</h3>
-          <ul>
-            <li>Relación 3:4 portrait</li>
-            <li>2000 × 2667 px</li>
-            <li>JPEG 85%</li>
-          </ul>
-        </div>
-        <div class="shot-card">
-          <span class="shot-card-icon">🔍</span>
-          <h3>Close-up de tela</h3>
-          <ul>
-            <li>Relación 3:4 portrait</li>
-            <li>2000 × 2667 px</li>
-            <li>JPEG <strong>90%</strong></li>
-          </ul>
+        <div class="hex-card">
+          <div class="hex-swatch" style="background-color: #e8e8e8;"></div>
+          <div class="hex-card-body">
+            <h3>Problem solution</h3>
+            <div class="hex-value">#e8e8e8</div>
+          </div>
         </div>
       </div>
 
       <div class="note" style="margin-top: 1.5rem;">
-        <strong>Nota sobre close-ups:</strong> Las texturas de denim — tejido, hilos, lavado — son especialmente sensibles a la compresión. Se usa 90% de calidad en lugar de 85% para preservar el detalle fino que el cliente examina al hacer zoom.
+        <strong>Nota:</strong> El fondo de <em>Problem solution</em> usa el mismo HEX (#e8e8e8) que el fondo estándar de product solution. Asegúrate de verificar el color con un selector antes de entregar las imágenes.
       </div>
     </section>
 
